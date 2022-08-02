@@ -24,6 +24,9 @@ dependencies {
 	implementation("com.squareup.retrofit2:retrofit:2.9.0")
 	implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 	implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation("org.modelmapper:modelmapper:3.1.0")
+
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
