@@ -20,4 +20,12 @@ class AddressController(
     fun getAddressByCep(@PathVariable(name = "cep")cep: String): ResponseEntity<Address>{
         return ResponseEntity.status(HttpStatus.OK).body(addressService.getAddressByCep(cep))
     }
+
+    @GetMapping("/{stateAbreviation}/{cityName}/{streetName}")
+    fun getAddressByStreetName(
+        @PathVariable("stateAbreviation") stateAbreviation: String,
+        @PathVariable("cityName") cityName: String,
+        @PathVariable("streetName") streetName: String): ResponseEntity<List<Address>>{
+        return ResponseEntity.status(HttpStatus.OK).body(addressService.getAddressByStreetName(stateAbreviation, cityName, streetName))
+    }
 }

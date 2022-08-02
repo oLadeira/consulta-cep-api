@@ -4,6 +4,7 @@ import br.com.lucasladeira.config.RetrofitConfig
 import br.com.lucasladeira.entities.Address
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import retrofit2.create
 
 @Service
 class AddressServiceImpl: AddressService {
@@ -17,6 +18,14 @@ class AddressServiceImpl: AddressService {
             .retrofit(BASE_URL)
             .create(ViaCepService::class.java)
         val apiCall = apiService.getAddressByCep(cep)
+        return apiCall.execute().body()
+    }
+
+    override fun getAddressByStreetName(stateAbbreviation: String, cityName: String, streetName: String): List<Address>? {
+        val apiService = retrofitConfig
+            .retrofit(BASE_URL)
+            .create(ViaCepService::class.java)
+        val apiCall = apiService.getAddressByStreetName(stateAbbreviation, cityName, streetName)
         return apiCall.execute().body()
     }
 }

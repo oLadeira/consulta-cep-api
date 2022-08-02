@@ -9,4 +9,11 @@ interface ViaCepService {
 
     @GET("ws/{cep}/json")
     fun getAddressByCep(@Path("cep") cep: String): Call<Address>
+
+    @GET("ws/{stateAbbreviation}/{cityName}/{streetName}/json")
+    fun getAddressByStreetName(
+        @Path("stateAbbreviation") stateAbbreviation: String,
+        @Path("cityName") cityName: String,
+        @Path("streetName") streetName: String
+    ): Call<List<Address>>
 }
