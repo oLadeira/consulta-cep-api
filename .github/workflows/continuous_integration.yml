@@ -18,4 +18,4 @@ jobs:
           distribution: 'adopt'
 
       - name: Build Gradle
-        run: ./gradle build
+        run: gradle build
