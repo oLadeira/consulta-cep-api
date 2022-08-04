@@ -11,7 +11,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+# *.jar
 *.war
 *.nar
 *.ear
@@ -31,8 +31,8 @@
 target/
 .mvn/
 .gradle
-**/build/
-!src/**/build/
+# **/build/
+# !src/**/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
